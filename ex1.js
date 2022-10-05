@@ -1,15 +1,10 @@
-function myFunction(msg,type){
-
-    switch (type)
-    {
-        case 1:  return console.log(msg)
-        case 2:  return alert(msg)
-        case 3:  return prompt(msg)
-        case 4:  return confirm(msg)
-        case 5:  return console.log(msg + " from a callback function!")
-    }
-    
+function myFunction(msg,cb,complement=""){
+    cb(msg+complement)    
 }
 
-myFunction("Un message",5)
+myFunction("Un message",console.log)
+myFunction("Un message",alert)
+myFunction("Un message",prompt)
+myFunction("Un message",confirm)
+myFunction("Un message",console.log," from a callback function")
 
